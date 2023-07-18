@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+body {
+	font-family: "Inter", sans-serif;
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+/* 
+
+font side of the card
+background-color: #bbb;
+color: black;
+
+
+back side of the card
+background-color: rgba(76, 0, 130, 0.534);
+color: white; 
+
+*/
+.box{
+    width: 500px;
+    height: 350px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    perspective: 1000px;
+}
+.content{
+    width: 500px;
+    height: 350px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+}
+.box:hover .content {
+    transform: rotateY(180deg);
+}
+.box-front,
+.box-back{
+    position: absolute;
+    width: 500px;
+    height: 350px;
+    padding: 30px;
+    backface-visibility: hidden;
+}
+.box-front{
+    background-color: #bbb;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotateY(0deg);
+
+}
+.box-back{
+    background-color: rgba(76, 0, 130, 0.534);
+    color: white;
+    transform: rotateY(180deg); 
+}
+
+.box-back h1{
+    text-align: center;
+    font-size: 60px;
+    padding-top: 10px;
+}
+.box-back p{
+    text-align: center;
+    font-size: 25px;
+    padding: 20px;
+}
